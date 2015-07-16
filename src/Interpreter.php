@@ -26,4 +26,9 @@ class Interpreter
     {
         $this->scope = $scope;
     }
+
+    public function run()
+    {
+        var_dump($this->scope);
+    }
 }

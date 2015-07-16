@@ -1,23 +1,23 @@
-<?php namespace Tattoo\Parser;
+<?php namespace ZueriCode\Parser;
 
 /**
- * Tattoo Parser
+ * ZueriCode Parser
  **
- * @package         Tattoo
+ * @package         ZueriCode
  * @copyright         2015 Mario Döring
  */
 
-use Tattoo\Node\Variable as VariableNode;
-use Tattoo\Node\VarDeclaration as VarDeclarationNode;
-use Tattoo\Parser\Expression;
-use Tattoo\Parser;
+use ZueriCode\Node\Variable as VariableNode;
+use ZueriCode\Node\VarAssign as VarAssignNode;
+use ZueriCode\Parser\Expression;
+use ZueriCode\Parser;
 
 class VarAssign extends Parser
 {
     /**
      * The current declaration node
      *
-     * @var Tattoo\Node\VarDeclaration
+     * @var ZueriCode\Node\VarDeclaration
      */
     protected $declaration = null;
 
@@ -28,7 +28,7 @@ class VarAssign extends Parser
      */
     protected function prepare()
     {
-        $this->declaration = new VarDeclarationNode;
+        $this->declaration = new VarAssignNode;
     }
 
     /**
@@ -50,15 +50,15 @@ class VarAssign extends Parser
     {
         $token = $this->currentToken();
 
-        if ($token->type !== 'variable')
+        if ($token->type !== 'identifier')
         {
             throw $this->errorUnexpectedToken($token);
         }
 
-        $this->declaration->setVariable($this->parseVariable());
+        $this->declaration->setVariable($this->parseChild('Variable'));
 
         // we currently only accept simple assigns
-        if ($this->currentToken()->type !== 'equal')
+        if ($this->currentToken()->type !== 'set')
         {
             throw $this->errorUnexpectedToken($this->currentToken());
         }
