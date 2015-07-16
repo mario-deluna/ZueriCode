@@ -60,6 +60,12 @@ class Scope extends Parser
             $this->scope->addChild($this->parseChild('VarAssign'));
         }
 
+        // well you might guess it print is print
+        elseif ($token->type === 'print') 
+        {
+            $this->scope->addChild($this->parseChild('Printer'));
+        }
+
         // otherwise throw an exception
         else
         {
