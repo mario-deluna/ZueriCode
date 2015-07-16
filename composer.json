@@ -1,0 +1,23 @@
+{
+	"name": "mario-deluna/zuericode",
+	"type": "library",
+	"description": "I can't even explain this...",
+	"version": "1.0.0",
+	"homepage": "https://github.com/mario-deluna/ZueriCode",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Mario Döring",
+			"homepage": "http://clancats.ch",
+			"role": "Developer"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"ZueriCode\\": "src/"
+		}
+	},
+	"bin": ["bin/tattoo"],
+	"require": {
+	}
+}

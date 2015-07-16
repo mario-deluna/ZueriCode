@@ -1,0 +1,42 @@
+#!/usr/bin/env php
+<?php 
+/*
+ *---------------------------------------------------------------
+ * Tattoo runner
+ *---------------------------------------------------------------
+ *
+ * This is the tattoo command line interface
+ */
+
+use ZueriCode\ZueriCode; 
+
+// we dont need the first argument
+array_shift( $argv );
+
+// if no more arguments are left print out the help
+if ( empty( $argv ) ) 
+{
+	echo 
+"
++-----------------------------------------+
+| ZueriCode | A sproch für echti schwizer |
++-----------------------------------------+
+
+ - [run] runs some nasty züri code
+   php bin/interpreter run <file>
+
+"; die;
+}
+
+require 'vendor/autoload.php';
+
+$command = array_shift( $argv );
+
+if ( $command == 'run' ) 
+{
+	$phpCode = ZueriCode::run( file_get_contents( array_shift( $argv ) ) );
+}
+else
+{
+	echo "Unknown command '".$command."'\n";
+}
