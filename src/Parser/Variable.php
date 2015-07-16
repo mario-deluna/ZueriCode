@@ -26,7 +26,7 @@ class Variable extends Parser
      */
     protected function prepare()
     {
-        $this->variable = new VarNode;
+        $this->variable = new VarNode('unknown');
     }
 
     /**

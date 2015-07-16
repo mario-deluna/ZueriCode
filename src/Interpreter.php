@@ -10,11 +10,18 @@
 class Interpreter
 {
     /**
-     * The current code scope
+     * The current code node
      *
-     * @var string
+     * @var Node
      */
-    protected $scope = null;
+    protected $node = null;
+
+    /**
+     * The current runtime environment
+     *
+     * @var Runtime
+     */
+    protected $runtime = null;
 
     /**
      * The constructor
@@ -22,13 +29,38 @@ class Interpreter
      * @var string         $code
      * @return void
      */
-    public function __construct(Node $scope)
+    public function __construct(Node $node, $runtime = null)
     {
-        $this->scope = $scope;
+        if (is_null($runtime))
+        {
+            $runtime = new Runtime;
+        }
+
+        $this->node = $node;
+        $this->runtime = $runtime;
     }
 
+    /**
+     * Run all the code!
+     */
     public function run()
     {
-        var_dump($this->scope);
+        $this->runChild('Scope', $this->node);
+    }
+
+    /**
+     * Run a child interpreter
+     *
+     * @param string            $interpreterClass
+     * @param Node              $node
+     * 
+     * @return void
+     */
+    protected function runChild($interpreterClass, Node $node)
+    {
+        $interpreterClass = __NAMESPACE__ . '\\Interpreter\\' . $interpreterClass;
+
+        $interpreter = new $interpreterClass($node, $this->runtime);
+        $interpreter->run();
     }
 }
