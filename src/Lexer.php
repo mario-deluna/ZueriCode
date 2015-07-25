@@ -52,7 +52,7 @@ class Lexer
         "/^(([1-9][0-9]*\.?[0-9]*)|(\.[0-9]+))([Ee][+-]?[0-9]+)?/" => 'number',
 
         // bool
-        "/^(jo)/" => "boolTrue",
+        "/^(ja)/" => "boolTrue",
         "/^(nei)/" => "boolFalse",
 
         // null
@@ -67,7 +67,7 @@ class Lexer
 
         "/^(oder wenn)/" => "elseif",
         "/^(wenn)/" => "if",
-        "/^(sust)/" => "else",
+        "/^(suscht)/" => "else",
 
         "/^(kapiert\?)/" => "scopeClose",
         "/^(:)/" => "scopeOpen",
@@ -76,9 +76,9 @@ class Lexer
 
         "/^(isch)/" => "set",
 
-        "/^(kliner isch als)/" => "smallerThan",
+        "/^(chliner isch als)/" => "smallerThan",
         "/^(grösser isch als)/" => "greaterThan",
-        "/^(glich isch wia)/" => "equals",
+        "/^(glich isch wie)/" => "equals",
 
         "/^([\w-]+)/" => "identifier",
 

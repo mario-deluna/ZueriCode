@@ -61,6 +61,6 @@ class Interpreter
         $interpreterClass = __NAMESPACE__ . '\\Interpreter\\' . $interpreterClass;
 
         $interpreter = new $interpreterClass($node, $this->runtime);
-        $interpreter->run();
+        return $interpreter->run();
     }
 }

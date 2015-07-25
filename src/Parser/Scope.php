@@ -66,6 +66,12 @@ class Scope extends Parser
             $this->scope->addChild($this->parseChild('Printer'));
         }
 
+        // and yeah an if
+        elseif ($token->type === 'if') 
+        {
+            $this->scope->addChild($this->parseChild('IfLogic'));
+        }
+
         // otherwise throw an exception
         else
         {

@@ -246,11 +246,19 @@ abstract class Parser
      * 
      * @return array[Tattoo\Token]
      */
-    protected function getTokensUntilClosingScope($includeScope = false)
+    protected function getTokensUntilClosingScope($includeScope = false, $or = null)
     {
         if ($this->currentToken()->type !== 'scopeOpen')
         {
             throw $this->errorUnexpectedToken($this->currentToken());
+        }
+
+        $closers = array(
+            'scopeClose',
+        );
+
+        if (!is_null($or)) {
+            $closers[] = $or;
         }
 
         $tokens = array();
@@ -266,14 +274,14 @@ abstract class Parser
        
         $currentLevel = 0;
 
-        while($this->currentToken() && !($this->currentToken()->type === 'scopeClose' && $currentLevel === 0))
+        while($this->currentToken() && !(in_array($this->currentToken()->type, $closers) && $currentLevel === 0))
         {
             if ($this->currentToken()->type === 'scopeOpen')
             {
                 $currentLevel++;
             }
 
-            if ($this->currentToken()->type === 'scopeClose')
+            if (in_array($this->currentToken()->type, $closers))
             {
                 $currentLevel--;
             }

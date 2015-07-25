@@ -91,4 +91,16 @@ class Token
         $this->type === 'boolFalse';
     }
 
+    /**
+     * Check if the current token is an operator
+     * 
+     * @return bool
+     */
+    public function isOperator()
+    {
+        return
+        $this->type === 'smallerThan' ||
+        $this->type === 'greaterThan' ||
+        $this->type === 'equals';
+    }
 }
