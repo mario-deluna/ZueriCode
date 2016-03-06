@@ -42,11 +42,10 @@ abstract class Parser
         foreach ($tokens as $key => $token) 
         {
             // remove all comments and whitespaces
-            if ($token->type === 'comment' || $token->type === 'whitespace') 
+            if ($token->type === 'comment' || $token->type === 'whitespace' || $token->type === 'fill') 
             {
                 unset($tokens[$key]);
             }
-
         }
 
         // reset the keys

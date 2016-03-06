@@ -53,9 +53,14 @@ class Lexer
 
         // bool
         "/^(ja)/" => "boolTrue",
+        "/^(jo)/" => "boolTrue",
+        "/^(voe)/" => "boolTrue",
         "/^(nei)/" => "boolFalse",
+        "/^(nö)/" => "boolFalse",
+        "/^(ne)/" => "boolFalse",
 
         // null
+        "/^(gar nüt)/" => "null",
         "/^(nüt)/" => "null",
 
         // comments
@@ -70,6 +75,8 @@ class Lexer
         "/^(suscht)/" => "else",
 
         "/^(kapiert\?)/" => "scopeClose",
+        "/^(checksch\?)/" => "scopeClose",
+        "/^(easy oder\?)/" => "scopeClose",
         "/^(:)/" => "scopeOpen",
 
         "/^(säg)/" => "print",
@@ -79,6 +86,14 @@ class Lexer
         "/^(chliner isch als)/" => "smallerThan",
         "/^(grösser isch als)/" => "greaterThan",
         "/^(glich isch wie)/" => "equals",
+
+        // ignored fill words
+        "/^(der)/" => "fill",
+        "/^(dä)/" => "fill",
+        "/^(de)/" => "fill",
+        "/^(vum)/" => "fill",
+        "/^(em)/" => "fill",
+        "/^(am)/" => "fill",
 
         "/^([\w-]+)/" => "identifier",
 

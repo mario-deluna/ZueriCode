@@ -1,24 +1,70 @@
 # ZueriCode
-Enormously stupid programming language in swiss german.
 
-It was one of those evenings.. I met a wonderfull girl and somehow my brain was stuck with this idea. So I took apart the tattoo language and create this nonsense: 
+Amazing world / game changing programming language in swiss german.
 
-## Syntax sample
+What makes this langauage so awsome:
+
+ * Its extremely slow!
+ * There is not a single unittest!
+ * __Its super realistic, if you use the "Berner" dialect its even slower!__
+ * Some tokens just get ignored by the parser.
+ * There is no way to access stuff outside of the script, because switzerland is an independent country.
+
+
+## Why?
+
+Raptor Jesus told me.
+
+## No Really why?
+
+You can TORTURE me, you can KILL me, I, I wont tell you A THING!!
+
+## Syntax Sample
 
 ```
-pascal isch 21
+em pascal sis alter isch 21
+em patrick sis alter isch 17
 
-wenn pascal kliner isch als 18:
+pascal sin brüader isch patrick
 
-säg "Du kusch do ni inna"
+folgendes szenario chuntErInClubInne de typ:
 
-sust:
+	wenn der typ sis alter chliner isch als 18:
+		
+		säg "Nei he du chusch do ni inna"
 
-säg "Geila siach!"
+	sust:
 
-kapiert?
+	    säg "Grab diar a paar chicks alte"
+
+	kapiert?
+
+easy oder?
+
+
+also pascal chuntErInClubInne
+
+also pascal sin brüader chuntErInClubInne
 ```
+
+## No seriously why TF?
+
+TF? Tandem forever??
 
 ## Installation
 
-## Usage
+## Usage
+
+## This is stupid, you are stupid...
+
+Yes!
+
+## Syntax
+
+## Is there any real usage for this?
+
+nööp.
+
+## TLDR;
+
+Phallus!

@@ -18,7 +18,7 @@ class Variable extends Parser
      * @var ZueriCode\Node\Scope
      */
     protected $variable = null;
-
+    
     /**
      * Prepare the scope node
      *
